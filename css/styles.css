@@ -1,0 +1,702 @@
+/* ----- ------------------------------ ----- */
+/* ----- setting global tags and styles ----- */
+/* ----- common to the entire page      ----- */
+/* ----- ------------------------------ ----- */
+
+:root {
+    /*content colors used in the page layout */
+     
+    --main-color-black : rgb(33, 33, 33,1);
+    --second-color-dark-grey: rgb(117, 117, 117);
+    --main-color-on-dark-bg-white: rgba(255, 255, 255, 1);
+    --second-color-dark-bg-white-06a: rgba(255, 255, 255, 0.6); 
+    
+    /* brand color is blue rgb(33, 150, 243), used to: hovered links, button, */
+    --brand-color-blue: #2196f3;
+    
+    --logotype-on-light-bg-black: rgb(0, 0, 0);
+    --logotype-on-dark-bg-white: rgb(255, 255, 255);
+    
+     /*background colors used in the page layout*/
+
+    --portfolio-button-bg-color: rgba(245, 244, 250, 1);
+    
+    /*background colors*/
+    --main-bg-color-white: rgb(255, 255, 255);
+    --second-bg-color-white: rgb(245, 244, 250);
+
+    --dark-bg-color-black1: rgb(47, 48, 58);
+
+    --border-color-white1: rgb(238, 238, 238);
+    --border-color-white2: rgb(236, 236, 236);
+    
+    /* ----- svg colors - bonus svg colors----- */
+    --svg-color-lgrey: hsl(227, 6%, 70%);
+    --svg-bg-color-black01: rgba(255, 255, 255, 0.1);
+
+    
+
+}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    
+    font-family: 'Roboto', sans-serif;
+    color: var(--main-color-black);   
+    background-color: var(--main-bg-color-white);      
+}
+
+/* ----- ------------------------------ ----- */
+/* ----- tags- reset properties: ul, h  ----- */
+ul,
+li {
+    margin-block: 0px;
+    padding-inline-start: 0p;
+    margin: 0px;
+    }
+ul,
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0px;
+}
+
+/* ----- (BEM) Global block - section ----- */
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+}
+.section__header {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-align: center;
+    padding-bottom: 50px;
+    /*background-color: aquamarine;*/
+}
+
+.section__list {
+    list-style-type: none;
+}
+.container {
+    width: 1200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.link {
+    text-decoration: none;
+    cursor: pointer;
+}
+.link:hover,
+.link:focus {color: var(--brand-color-blue);
+}
+
+/* - to nie działa poprawnie
+.icon {display: inline-block;}
+
+.icon:focus,
+.icon:hover {
+    fill: var(--brand-color-blue);
+}
+*/
+
+/* ----- ------------------------------ ----- */
+/* ----- Logo WebStudio - ready to use
+/* ----- logotype styles: on light & dark background
+/* ----- ------------------------------ ----- */
+.logo { 
+    display: inline-block;  
+}
+.logo__logotype{
+    text-decoration: none;
+    font-family: Raleway, Oleo Script, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+}
+.logo__logotype--brand-color {color: var(--brand-color-blue);}
+.logo__logotype--on-light-bg {color: var(--logotype-on-light-bg-black);}
+.logo__logotype--on-dark-bg {color: var(--logotype-on-dark-bg-white);}
+
+
+/* ----- ------------------------------ ----- */
+/* ----- header & menu global styles    ----- */
+/* ----- ------------------------------ ----- */
+
+.page-header {
+    background-color:var(--main-bg-color-white);
+    border-bottom: 1px solid var(--border-color-white2);
+}
+.menu {
+    height: 79px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    font-size: 14px;
+    font-weight: 500;
+    line-height: calc(16 / 14);
+    letter-spacing: 0.02em;
+}
+
+.menu__logo {
+    margin-right: 97px;
+}
+
+.menu__nav {
+    display: flex;
+    flex: 1;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: calc(16 / 14);
+    letter-spacing: 0.02em;
+   
+}
+.menu__nav-items {
+    display: flex;   
+    gap: 46px;
+    
+    list-style-type: none;
+    color: var(--main-color-black); 
+}
+.menu__nav-item {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--main-color-black); 
+}
+
+.menu__contact {
+    display: flex;
+    padding: 0px 10px;  
+}
+.menu__contact-items {
+    display: flex;
+    justify-content: center;   
+    gap: 30px; 
+
+    list-style-type: none;
+}
+.menu__contact-item {
+    display: inline-flex;
+    justify-content: center;
+    
+    text-decoration: none;
+    cursor: pointer;    
+    color: var(--second-color-dark-grey);
+    fill: var(--second-color-dark-grey);
+}
+.menu__contact-icon-mail {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+
+    fill: inherit; 
+    /*var(--second-color-dark-grey);*/
+}
+.menu__contact-icon-tel {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+
+    fill: inherit; 
+    /*var(--second-color-dark-grey);*/
+}
+.menu__contact-item:hover,
+.menu__contact-item:focus,
+.menu__contact-icon-mail:hover,
+.menu__contact-icon-mail:focus,
+.menu__contact-icon-tel:hover,
+.menu__contact-icon-tel:focus {
+    color: var(--brand-color-blue);
+    fill:var(--brand-color-blue);
+}
+
+/* ----- ------------------------------ ----- */
+/* ----- footer styles: dark background ----- */
+/* ----- ------------------------------ ----- */
+
+.section__footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    
+    background-color: var(--dark-bg-color-black1);
+}
+.footer {
+    padding-right: 15px;
+    display: flex;
+    align-content: flex-start;
+    column-gap: 70px;
+
+   /* background-color: gold; */
+}
+
+.footer__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    row-gap: 20px; 
+}
+
+/* ----- 1st footer item - logo + address box ----- */
+
+.address__link--color { color: var(--second-color-dark-bg-white-06a);}
+
+.address__box {
+    text-decoration: none;
+    height: 81px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+       
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+    text-align: left;
+    
+    color: var(--main-color-on-dark-bg-white); 
+}
+
+/* ----- 2nd footer item - label + social media icons list  --*/
+
+.footer__label {
+    margin-top: 12px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: calc(16/14)px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+
+    color: var(--main-color-on-dark-bg-white);
+}
+
+.footer__icons {
+    list-style-type: none;
+    display: flex;
+}
+
+.footer__icons-list {
+      
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    column-gap: 10px;
+    list-style: none;
+    /*background-color: chartreuse;*/
+   
+}
+.footer__icon-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--svg-bg-color-black01);
+    fill: var(--main-color-on-dark-bg-white);
+}
+
+.footer__icon{
+    display: inline-block;    
+    fill: inherit;
+}
+
+.footer__icon-bg:hover{
+    fill: var(--main-bg-color-white);
+    background-color: var(--brand-color-blue);
+}
+
+
+/* ----- ------------------------------ ----- */
+/* ----- main page specyfic styles      ----- */
+/* ----- ------------------------------ ----- */
+/* ----- section ./header, witout class section, ----- */
+
+.header__banner {
+    
+    width: auto;
+    height: 600px;
+    background-position:center;
+    
+    background-color: var(--dark-bg-color-black1);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.6), rgba(47, 48, 58, 0.4)), url(/images/heder-banner-opt-people-teams-at-work-.jpg);
+    
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, 
+ }
+.header__box {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+}
+.header__slogan {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.36;
+    letter-spacing: 0.06em;
+    text-align: center;
+    color: var(--main-color-on-dark-bg-white);
+   
+}
+.header__button {
+    width: 200px;
+    height: 50px;
+    display: block;
+    
+    background: var(--brand-color-blue);
+   
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    
+    color: var(--main-color-on-dark-bg-white);
+    cursor: pointer;
+}
+
+/* ----- ------------------------------ ----- */
+/* ----- FEATURE SECTION - content article--- */
+/* ----- section, __short-padding-bottom
+/* ----- article __img, __header icon __text 
+/* ----- !!! WYMAGA POPRAWY ---------------- ----- */
+
+.section__short-padding-bottom {
+    padding-bottom: 0px;
+}
+.articles__list {
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+    
+    list-style: none; 
+}
+
+.article {
+    max-width: 270px;
+    /*background-color: coral;*/
+}
+.article__figure {
+    width: 270px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 30px;
+    
+    background-color: var(--second-bg-color-white);
+}
+.article__icon {
+    display: block;
+    width: 65px;
+    height: 70px;      
+}
+.article__title {
+    
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-align:left;
+
+    margin-bottom: 10px;
+}
+.article__copy { 
+    height: 75px;
+
+    font-size: 14px;
+    line-height: calc(24/14);
+    letter-spacing: 0.03em;
+    text-align: left;
+
+    color: var(--second-color-dark-grey);
+}
+
+/* ----- ---------- -----*/
+/* ----- ACTIVITY SECTION ----- */
+
+
+.gallery__list {
+    list-style-type: none;
+
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+}
+.gallery__item {
+    max-width: 370px;
+    height: 294px;
+    margin: 0px;
+}
+
+/* ----- ---------- ---------- ---------------------*/
+/* ----- section our team contain below ---- -----*/
+/* ----- .section--color-bg, figure caption, icons list, links ----- ----- -----*/
+
+.section--color-bg {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--second-bg-color-white);
+    background-position: 50% 50%;
+    background-repeat: repeat;
+    background-size:cover;
+    background-position-x: center;
+    
+}
+
+.team-card__set {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* ----- team card -> figure contain personalized card with: img, name, description, social media links, icons ----*/
+
+.team-card {
+    max-width: 270px;
+    min-height: auto;
+    
+    background: var(--main-bg-color-white);
+
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+}
+.team-card__img {
+    display: block;
+    width: auto;
+    height: 260px;
+}
+
+.team-card__body{
+    width: auto;
+    height: auto;
+    margin: 0px;
+    padding: 30px 32px;
+    
+    /*background-color: lightgreen;*/
+        
+}
+.team-card__name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 10px;
+        
+}
+.team-card__description {
+    font-size: 16px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    text-align: center;
+    margin-bottom: 16px;
+
+    color: var(--second-color-dark-grey);
+}
+
+/* ----- def social media icons - ---- */
+
+.team-card__icons-list {
+      
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    column-gap: 10px;
+    list-style: none;
+    /*background-color: chartreuse;*/
+   
+}
+.team-card__icon-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--main-bg-color-white);
+    fill: var(--svg-color-lgrey);
+}
+
+.team-card__icon{
+    display: inline-block;    
+    fill: inherit;
+}
+
+.team-card__icon-bg:hover{
+    fill: var(--main-bg-color-white);
+    background-color: var(--brand-color-blue);
+}
+
+
+/* ----- ----- ----- ----- ----- -----*/
+/* ----- section our client contain below ---- -----*/
+/* ----- figure caption, icons list, links ----- ----- -----*/
+
+.client__list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+
+    list-style-type: none;
+}
+.client__item {
+    width: 168px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 4px;
+    border: 1px solid var(--svg-color-lgrey);
+
+    fill: var(--svg-color-lgrey);
+    
+}
+
+.client__icon{
+    display: block;
+    width: 100px;
+    height: 60px;
+    fill: inherit;
+}
+
+.client__item:hover,
+.client__item:focus {
+    fill: var(--brand-color-blue);
+    border-color: var(--brand-color-blue);
+    
+}
+
+
+/* ----- ------------------------------ ----- */
+/* ----- SITE PORTFOLIO ----- ----- */
+/*specyfic styles ----- */
+/* ----- ------------------------------ ----- */
+
+/*.portfolio-gallery {
+    font-family: 'Roboto', sans-serif;
+    color: var(--main-color-black);
+    background-color: var(--main-bg-color-white);
+}*/
+
+.button__list {
+    list-style-type: none;
+    padding-inline-start: 0px;
+    
+    display: flex;
+    justify-content: center;
+    gap: 0px 8px;
+    padding-bottom: 50px;
+    
+}
+.button {
+    
+    border-style: none;
+    border-radius: 4px;
+    padding: 6px 22px;
+    background-color: var(--second-bg-color-white);
+}
+.button__text {
+    text-align: center;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.62;
+    letter-spacing: 0.03em;
+
+    color: var(--main-color-black);
+    cursor: pointer;
+}
+.button:hover,
+.button:focus,
+.button:active {
+    
+    background-color: var(--brand-color-blue);
+    color: var(--main-color-on-dark-bg-white);
+    
+    /* shadow-middle */
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    
+}
+
+/* ----- ---------- ---------- ----- */
+/* ----- Portfolio cards spec styles ----- */
+/* ----- flex wrap 3/row */
+
+.portfolio-card {flex-basis: calc((100% - 60px)/3);}
+
+.portfolio-card:hover,
+.portfolio-card:focus,
+.portfolio-card:active {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-card__list{
+    list-style-type:none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    gap: 30px 30px; 
+
+   /*background-color: brown;  */
+}
+
+.portfolio-card__img {
+    display: block;
+    width: auto;
+    height: 294px;
+}
+.portfolio-card__caption {
+    width: 370px;
+    padding: 15px 24px 20px;
+
+    border-left: 1px solid var(--border-color-white2);
+    border-right: 1px solid var(--border-color-white2);
+    border-bottom: 1px solid var(--border-color-white2);
+}
+.portfolio-card__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    text-align: left;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+.portfolio-card__label {
+    
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: var(--second-color-dark-grey);
+}
