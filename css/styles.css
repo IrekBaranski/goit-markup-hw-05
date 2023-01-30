@@ -321,6 +321,7 @@ p {
     fill: inherit;
 }
 
+.footer__icon-bg:focus,
 .footer__icon-bg:hover{
     fill: var(--main-bg-color-white);
     background-color: var(--brand-color-blue);
@@ -328,7 +329,7 @@ p {
 
 
 /* ----- ------------------------------ ----- */
-/* ----- main page specyfic styles      ----- */
+/* ----- MAIN PAGE SECTION - HEADER     ----- */
 /* ----- ------------------------------ ----- */
 /* ----- section ./header, witout class section, ----- */
 
@@ -339,7 +340,8 @@ p {
     background-position:center;
     
     background-color: var(--dark-bg-color-black1);
-    background-image: linear-gradient(rgba(47, 48, 58, 0.6), rgba(47, 48, 58, 0.4)), url(/images/heder-banner-opt-people-teams-at-work-.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.6), rgba(47, 48, 58, 0.4)), 
+    url(../images/heder-banner-opt-people-teams-at-work-.jpg);
     
     background-repeat: no-repeat, no-repeat;
     background-size: cover, 
@@ -550,6 +552,7 @@ p {
     fill: inherit;
 }
 
+.team-card__icon-bg:focus,
 .team-card__icon-bg:hover{
     fill: var(--main-bg-color-white);
     background-color: var(--brand-color-blue);
