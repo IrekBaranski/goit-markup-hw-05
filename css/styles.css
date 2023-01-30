@@ -12,7 +12,7 @@
     --second-color-dark-bg-white-06a: rgba(255, 255, 255, 0.6); 
     
     /* brand color is blue rgb(33, 150, 243), used to: hovered links, button, */
-    --brand-color-blue: #2196f3;
+    --brand-color-blue: rgb(33, 150, 243);
     
     --logotype-on-light-bg-black: rgb(0, 0, 0);
     --logotype-on-dark-bg-white: rgb(255, 255, 255);
@@ -127,7 +127,7 @@ p {
 
 
 /* ----- ------------------------------ ----- */
-/* ----- header & menu global styles    ----- */
+/* ----- ----- PAGE HEADER - MENU ----- ----- */
 /* ----- ------------------------------ ----- */
 
 .page-header {
@@ -150,8 +150,16 @@ p {
 }
 
 .menu__logo {
-    margin-right: 97px;
+    margin-right: 90px;
+    background-color: transparent;
+
+    animation-name: movingShadow;
+    animation-duration: 20s;
+    animation-timing-function: ease-out;
 }
+
+/* ----- -------------------------------------------- */
+/* ----- 2nd menu item - navigation ----- */
 
 .menu__nav {
     display: flex;
@@ -165,7 +173,8 @@ p {
 }
 .menu__nav-items {
     display: flex;   
-    gap: 46px;
+    gap: 40px;
+    align-items:;
     
     list-style-type: none;
     color: var(--main-color-black); 
@@ -174,7 +183,71 @@ p {
     text-decoration: none;
     cursor: pointer;
     color: var(--main-color-black); 
+    margin: 0px 3px;
 }
+
+.link--active::after {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    content: "";
+    width: 58px;
+    min-height: 4px;
+    border-radius: 10px;
+    background-color: var(--brand-color-blue);
+    margin-top: 28px;
+    position: absolute;
+
+    animation-name: updownLine;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-out;
+
+  }
+  
+@keyframes updownLine {
+    0% {
+        margin-top: 28px;
+        
+        min-height: 4px;
+        width: 58px
+
+        }
+    50% {
+        margin-top: 2px;
+        
+        min-height: 4px;
+        width: 62px
+        
+        }
+    100% {
+        margin-top: 28px;
+        
+        min-height: 4px;
+        width: 58px
+    }
+    }
+@keyframes movingShadow {
+    0% {
+        box-shadow: -29px 11px 24px 22px rgba(33,150,243,0.47);
+-webkit-box-shadow: -29px 11px 24px 22px rgba(33,150,243,0.47);
+-moz-box-shadow: -29px 11px 24px 22px rgba(33,150,243,0.47);
+    }
+    50% {
+        box-shadow: 0px 52px 12px -7px rgba(33,150,243,0.75);
+        -webkit-box-shadow: 0px 52px 12px -7px rgba(33,150,243,0.75);
+        -moz-box-shadow: 0px 52px 12px -7px rgba(33,150,243,0.75);
+    }
+    100% {
+        box-shadow: 74px 23px 12px -7px rgba(33,150,243,0.75);
+        -webkit-box-shadow: 74px 23px 12px -7px rgba(33,150,243,0.75);
+        -moz-box-shadow: 74px 23px 12px -7px rgba(33,150,243,0.75);
+    }
+}
+
+
+/* ----- -------------------------------------------- */
+/* ----- 3rd menu item - contact link ----- ----- */
 
 .menu__contact {
     display: flex;
