@@ -443,12 +443,19 @@ p {
     color: var(--main-color-on-dark-bg-white);
    
 }
-.header__button {
-    width: 200px;
-    height: 50px;
+
+/* ----- ----------------------------- ----- */
+/* ----- MODAL                         ----- */
+
+.button__order {
     display: block;
     
-    background: var(--brand-color-blue);
+    width: 200px;
+    height: 50px;
+    border-style: none;
+    border-radius: 4px;
+   
+    background-color: var(--brand-color-blue);
    
     font-family: Roboto;
     font-size: 16px;
@@ -458,7 +465,76 @@ p {
     
     color: var(--main-color-on-dark-bg-white);
     cursor: pointer;
+    
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 }
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: rgba(0, 0, 0, 0.2);
+    
+    transition-property: visibility, opacity, transform;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
+  }
+  .modal {
+    display: flex;
+    position: fixed;
+    width: 528px;
+    height: 581px;
+    background-color: var(--second-bg-color-white);
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px var(--dark-bg-color-black1),
+      0px 1px 1px var(--second-color-dark-grey),
+      0px 2px 1px var(--svg-color-lgrey);
+  }
+  
+  .is-hidden {
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(50%) translateY(-50%) scale(0.5) rotate(0deg) skew(10deg, 10deg);
+}
+
+  .modal__icon-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 17px;
+    right: 17px;
+    
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+
+    background-color: var(--main-bg-color-white);
+    border-color: var(--border-color-white2);
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .modal__icon-close:hover,
+  .modal__icon-close:focus {
+    cursor: pointer;
+    background-color: var(--brand-color-blue);
+  }
+
 
 /* ----- ------------------------------ ----- */
 /* ----- FEATURE SECTION - content article--- */
@@ -533,6 +609,22 @@ p {
     max-width: 370px;
     height: 294px;
     margin: 0px;
+    position: relative;
+    
+}
+.team-card__label {
+    display: block;
+    max-width: auto;
+    height: 70px;
+
+    position:absolute;
+    top: 50px;
+
+    color: var(--main-color-on-dark-bg-white);
+    background-color: linear-gradient;
+    
+
+
 }
 
 /* ----- ---------- ---------- ---------------------*/
@@ -696,7 +788,6 @@ p {
     border-color: var(--brand-color-blue);
     
 }
-
 
 /* ----- ------------------------------ ----- */
 /* ----- SITE PORTFOLIO ----- ----- */

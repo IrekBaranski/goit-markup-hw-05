@@ -19,7 +19,6 @@
   </head>
 
   <body>
-
     <!-- ----- ------------------------------------------------>
     <!-- ----- Section - PAGE HEADER - MENU -----                      -->
     <!-- ----- same on both sites ------------------------------------------->  
@@ -94,11 +93,23 @@
             <div class="container">
                 <div class="header__box">
                     <h1 class="header__slogan">EFEKTYWNE ROZWIĄZANIA <br> DLA WASZEGO BIZNESU </h1>
-                    <button class="header__button" type="button" >Zamów usługe</button>
+                    <button data-modal-open class="button__order" type="button">Zamów usługe
+                    </button>
+                    <div class="backdrop is-hidden" data-modal>
+                        <div class="modal">
+                            <button data-modal-close class="modal__icon-close">
+                                <svg class="close" width="11" height="11">
+                                    <use href="./images/icons.svg#icon-close-black-18dp-2-1"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>               
         </header>
         
+        
+              
     <!-- -------------------------------------------------------- -->
     <!-- FEATURE ARTICLES  ----- -->
     <!-- -------------------------------------------------------- -->
@@ -199,11 +210,13 @@
                 <ul class="gallery__list">
                     <li>
                         <figure class="gallery__item">
-                        <img src="images/mainpage-what-we-do-close-up-image-programer-working-his-desk-office_1098-18707.jpg" alt="programista pracujący w swoim biurze przy biurku."
-                        height="294"                    
-                        width="370"
-                        >
-                        </figure>
+                            <img src="images/mainpage-what-we-do-close-up-image-programer-working-his-desk-office_1098-18707.jpg" alt="programista pracujący w swoim biurze przy biurku."
+                            height="294"                    
+                            width="370"
+                            >
+                            <figcaption class="card__label">
+                                Czy to tu>
+                            </figcaption>
                     </li>
                     <li>
                         <figure class="gallery__item">
@@ -634,4 +647,10 @@
             </div>
         </div>
     </footer>
+
+    
+
+    <script src="./js/modal.js">
+
+    </script>
     </body>
