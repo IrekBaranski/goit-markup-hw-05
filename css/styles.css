@@ -4,13 +4,15 @@
 /* ----- ------------------------------ ----- */
 
 :root {
-    /*content colors used in the page layout */
-     
+    /*content colors*/
     --main-color-black : rgb(33, 33, 33,1);
     --second-color-dark-grey: rgb(117, 117, 117);
     --main-color-on-dark-bg-white: rgba(255, 255, 255, 1);
     --second-color-dark-bg-white-06a: rgba(255, 255, 255, 0.6); 
-    
+    --svg-color-lgrey: rgb(174, 176, 183);
+    --border-color-white1: rgb(238, 238, 238);
+    --border-color-white2: rgb(236, 236, 236);
+
     /* brand color is blue rgb(33, 150, 243), used to: hovered links, button, */
     --brand-color-blue: rgb(33, 150, 243);
     --brand-color-blue-a09: rgba(33, 150, 243, 0.9);
@@ -18,23 +20,14 @@
     --logotype-on-light-bg-black: rgb(0, 0, 0);
     --logotype-on-dark-bg-white: rgb(255, 255, 255);
     
-     /*background colors used in the page layout*/
-
-    --portfolio-button-bg-color: rgba(245, 244, 250, 1);
-    
-    /*background colors*/
+    /*background & shadow colors*/
     --main-bg-color-white: rgb(255, 255, 255);
     --second-bg-color-white: rgb(245, 244, 250);
 
     --dark-bg-color-black1: rgb(47, 48, 58);
-
-    --border-color-white1: rgb(238, 238, 238);
-    --border-color-white2: rgb(236, 236, 236);
+    --dark-bg-color-black08: rgba(47, 48, 58, 0.8);
     
-    /* ----- svg colors - bonus svg colors----- */
-    --svg-color-lgrey: hsl(227, 6%, 70%);
     --svg-bg-color-black01: rgba(255, 255, 255, 0.1);
-
 }
 * {
     margin: 0px;
@@ -42,7 +35,6 @@
 }
 
 body {
-    
     font-family: 'Roboto', sans-serif;
     color: var(--main-color-black);   
     background-color: var(--main-bg-color-white);      
@@ -158,8 +150,7 @@ p {
 }
 
 .menu__logo {
-    margin-right: 90px;
-   
+    margin-right: 90px;  
 }
 
 /* ----- -------------------------------------------- */
@@ -223,23 +214,6 @@ p {
         width: 58px
     }
     }
-@keyframes movingShadow {
-    0% {
-        box-shadow: -29px 11px 24px 22px rgba(33,150,243,0.47);
--webkit-box-shadow: -29px 11px 24px 22px rgba(33,150,243,0.47);
--moz-box-shadow: -29px 11px 24px 22px rgba(33,150,243,0.47);
-    }
-    50% {
-        box-shadow: 0px 52px 12px -7px rgba(33,150,243,0.75);
-        -webkit-box-shadow: 0px 52px 12px -7px rgba(33,150,243,0.75);
-        -moz-box-shadow: 0px 52px 12px -7px rgba(33,150,243,0.75);
-    }
-    100% {
-        box-shadow: 74px 23px 12px -7px rgba(33,150,243,0.75);
-        -webkit-box-shadow: 74px 23px 12px -7px rgba(33,150,243,0.75);
-        -moz-box-shadow: 74px 23px 12px -7px rgba(33,150,243,0.75);
-    }
-}
 
 
 /* ----- -------------------------------------------- */
@@ -440,8 +414,7 @@ p {
     line-height: 1.36;
     letter-spacing: 0.06em;
     text-align: center;
-    color: var(--main-color-on-dark-bg-white);
-   
+    color: var(--main-color-on-dark-bg-white); 
 }
 
 /* ----- ----------------------------- ----- */
@@ -469,7 +442,6 @@ p {
     transition-property: transform;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 .backdrop {
     position: fixed;
@@ -594,50 +566,45 @@ p {
     color: var(--second-color-dark-grey);
 }
 
-/* ----- ---------- -----*/
-/* ----- ACTIVITY SECTION ----- */
+/* ----- -------------------------- -----*/
+/* ----- OFFER Section ----- */
 
-
-.gallery__list {
-    list-style-type: none;
-
+.section__list {
     display: flex;
     justify-content: center;
+    list-style-type: none;
+}
+.offer-card__grid {
     column-gap: 30px;
 }
-.gallery__item {
+.offer-card {
+    display: block;
     max-width: 370px;
-    height: 294px;
+    height: max-content;
     margin: 0px;
     position: relative;
     
 }
-.card__label {
+.offer-card__img{
+    display: block;
+}
+
+.offer-card__label {
+    position: absolute;
+    bottom: 0; 
+    
     display: block;
     width: 370px;
     height: 70px;
     padding: 27px 90px;
-    
 
-    position: absolute;
-    bottom: 0;
-   
     text-align: center;
-    
     font-size: 14px;
     font-weight: 700;
     line-height: calc(16/14)px;
     letter-spacing: 0.03em;
-    
-
-    
-
-    
-    
-
     color: var(--main-color-on-dark-bg-white);
-    background-color: var(--second-color-dark-bg-white-06a)
-    
+    background: linear-gradient(0deg, var(--svg-bg-color-black01), 0%, var(--dark-bg-color-black08, 50%)) ;
 }
 
 /* ----- ---------- ---------- ---------------------*/
